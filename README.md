@@ -1,2 +1,22 @@
-# nuxt-play-around
-Playing around with Nuxt.js to create a ssg
+# play-with-nuxt
+
+> A first try creating a ssg with nuxt
+
+## Build Setup
+
+``` bash
+# install dependencies
+$ npm install
+
+# serve with hot reload at localhost:3000
+$ npm run dev
+
+# build for production and launch server
+$ npm run build
+$ npm start
+
+# generate static project
+$ npm run generate
+```
+
+For detailed explanation on how things work, checkout [Nuxt.js docs](https://nuxtjs.org).
