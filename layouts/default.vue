@@ -1,55 +1,128 @@
 <template>
   <div>
-    <nuxt />
+    <app-header />
+    <!-- <nuxt /> -->
+    <transition name="router-anim" mode="out-in">
+      <nuxt />
+    </transition>
   </div>
 </template>
 
-<style>
-html {
-  font-family: 'Source Sans Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI',
-    Roboto, 'Helvetica Neue', Arial, sans-serif;
-  font-size: 16px;
-  word-spacing: 1px;
-  -ms-text-size-adjust: 100%;
-  -webkit-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-  box-sizing: border-box;
+<script>
+import header from '../components/Header.vue'
+export default {
+  components: {
+    'app-header': header
+  },
+  data() {
+    return {}
+  },
+  methods: {}
 }
+</script>
 
-*,
-*:before,
-*:after {
-  box-sizing: border-box;
+<style lang="scss">
+body {
+  -webkit-font-smooting: antialiased;
+  width: 100%;
+  height: 100%;
   margin: 0;
+  font-family: 'Titillium Web', sans-serif;
+  font-weight: 300;
+  background: #f7797d;
+  background: -webkit-linear-gradient(to right, #f7797d, #fbd786, #c6ffdd);
+  background: linear-gradient(to right, #f7797d, #fbd786, #c6ffdd);
+  background-size: 300% 300%;
+  -webkit-animation: Gradient 10s ease infinite;
+  -moz-animation: Gradient 10s ease infinite;
+  animation: Gradient 10s ease infinite;
+  h1 {
+    font-weight: 400;
+  }
+  .page {
+    width: inherit;
+    max-width: 900px;
+    margin: auto;
+    padding: 120px 15px 80px;
+  }
+  @media screen and (min-width: 768px) {
+    .router-anim-enter-active {
+      animation: coming 0.6s;
+      animation-delay: 0.3s;
+      -webkit-animation: coming 0.6s;
+      -webkit-animation-delay: 0.3s;
+      opacity: 0;
+    }
+    .router-anim-leave-active {
+      animation: going 0.6s;
+      -webkit-animation: going 0.6s;
+    }
+  }
 }
 
-.button--green {
-  display: inline-block;
-  border-radius: 4px;
-  border: 1px solid #3b8070;
-  color: #3b8070;
-  text-decoration: none;
-  padding: 10px 30px;
+@keyframes going {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50px);
+    opacity: 0;
+  }
 }
 
-.button--green:hover {
-  color: #fff;
-  background-color: #3b8070;
+@-webkit-keyframes going {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50px);
+    opacity: 0;
+  }
 }
 
-.button--grey {
-  display: inline-block;
-  border-radius: 4px;
-  border: 1px solid #35495e;
-  color: #35495e;
-  text-decoration: none;
-  padding: 10px 30px;
-  margin-left: 15px;
+@keyframes coming {
+  from {
+    transform: translateX(-50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
 }
 
-.button--grey:hover {
-  color: #fff;
-  background-color: #35495e;
+@-webkit-keyframes coming {
+  from {
+    transform: translateX(-50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes Gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@-webkit-keyframes Gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 </style>
