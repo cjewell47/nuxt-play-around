@@ -1,68 +1,127 @@
 <template>
-  <section class="container">
-    <div>
-      <logo />
-      <h1 class="title">
-        play-with-nuxt
-      </h1>
-      <h2 class="subtitle">
-        A first try creating a ssg with nuxt
-      </h2>
-      <div class="links">
-        <a
-          href="https://nuxtjs.org/"
-          target="_blank"
-          class="button--green"
-        >Documentation</a>
-        <a
-          href="https://github.com/nuxt/nuxt.js"
-          target="_blank"
-          class="button--grey"
-        >GitHub</a>
-      </div>
-    </div>
-  </section>
+  <div>
+    <app-header />
+    <transition name="router-anim" mode="out-in">
+      <router-view />
+    </transition>
+  </div>
 </template>
 
 <script>
-import Logo from '~/components/Logo.vue'
-
+import header from '../components/Header.vue'
 export default {
   components: {
-    Logo
-  }
+    'app-header': header
+  },
+  data() {
+    return {}
+  },
+  methods: {}
 }
 </script>
 
-<style>
-.container {
-  margin: 0 auto;
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-}
-
-.title {
-  font-family: 'Quicksand', 'Source Sans Pro', -apple-system, BlinkMacSystemFont,
-    'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-  display: block;
+<style lang="scss">
+body {
+  -webkit-font-smooting: antialiased;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  font-family: 'Titillium Web', sans-serif;
   font-weight: 300;
-  font-size: 100px;
-  color: #35495e;
-  letter-spacing: 1px;
+  background: #f7797d;
+  background: -webkit-linear-gradient(to right, #f7797d, #fbd786, #c6ffdd);
+  background: linear-gradient(to right, #f7797d, #fbd786, #c6ffdd);
+  background-size: 300% 300%;
+  -webkit-animation: Gradient 10s ease infinite;
+  -moz-animation: Gradient 10s ease infinite;
+  animation: Gradient 10s ease infinite;
+  h1 {
+    font-weight: 400;
+  }
+  .page {
+    width: inherit;
+    max-width: 900px;
+    margin: auto;
+    padding: 120px 15px 80px;
+  }
+  @media screen and (min-width: 768px) {
+    .router-anim-enter-active {
+      animation: coming 0.6s;
+      animation-delay: 0.3s;
+      -webkit-animation: coming 0.6s;
+      -webkit-animation-delay: 0.3s;
+      opacity: 0;
+    }
+    .router-anim-leave-active {
+      animation: going 0.6s;
+      -webkit-animation: going 0.6s;
+    }
+  }
 }
 
-.subtitle {
-  font-weight: 300;
-  font-size: 42px;
-  color: #526488;
-  word-spacing: 5px;
-  padding-bottom: 15px;
+@keyframes going {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50px);
+    opacity: 0;
+  }
 }
 
-.links {
-  padding-top: 15px;
+@-webkit-keyframes going {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50px);
+    opacity: 0;
+  }
+}
+
+@keyframes coming {
+  from {
+    transform: translateX(-50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes coming {
+  from {
+    transform: translateX(-50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes Gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@-webkit-keyframes Gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 </style>
