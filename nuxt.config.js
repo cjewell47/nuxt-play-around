@@ -1,4 +1,3 @@
-import pkg from './package'
 
 export default {
   mode: 'universal',
@@ -7,14 +6,23 @@ export default {
   ** Headers of the page
   */
   head: {
-    title: pkg.name,
+    title: 'Charles Jewell',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: pkg.description }
+      {
+        hid: 'description',
+        name: 'description',
+        content: 'Charles Jewell is a London based Web developer'
+      }
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+      { rel: 'icon', type: 'image/jpg', href: '/favicon-32x32.jpg', sizes: '32x32' },
+      { rel: 'icon', type: 'image/jpg', href: '/favicon-16x16.jpg', sizes: '16x16' },
+      {
+        rel: 'stylesheet',
+        href: 'https://fonts.googleapis.com/css?family=Titillium+Web:300,400'
+      }
     ]
   },
 

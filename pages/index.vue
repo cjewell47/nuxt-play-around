@@ -1,8 +1,5 @@
 <template>
   <div class="page">
-    <!-- <transition name="router-anim" mode="out-in">
-      <router-view />
-    </transition> -->
     <h1>Home</h1>
   </div>
 </template>

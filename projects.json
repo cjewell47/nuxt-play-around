@@ -2,8 +2,8 @@
     {
         "code": "bl",
         "name": "Blend Life",
-        "img1": "/BlendLifeBW-min.png",
-        "img2": "/BlendLife-min.png",
+        "img1": "/BlendLifeBW-min.jpg",
+        "img2": "/BlendLife-min.jpg",
         "link": "https://intense-dusk-18560.herokuapp.com/", 
         "link2": {
             "link": "https://github.com/cjewell47/blend-life-client",
@@ -17,15 +17,15 @@
     {
         "code": "ffp",
         "name": "Financial Fitness Plan",
-        "img1": "/ffpbw.png",
-        "img2": "/ffp.png",
+        "img1": "/ffpbw.jpg",
+        "img2": "/ffp.jpg",
         "link": "https://www.experian.co.uk/consumer/financial-fitness-plan/"
     },
     {
         "code": "pp",
         "name": "Paws and Play",
-        "img1": "/PawsAndPlayBW-min.png",
-        "img2": "/PawsAndPlay-min.png",
+        "img1": "/PawsAndPlayBW-min.jpg",
+        "img2": "/PawsAndPlay-min.jpg",
         "link": "https://dogwalkingapp.herokuapp.com/",
         "link2": {
             "name": "Visit the repo",
@@ -46,8 +46,8 @@
     {
         "code": "br",
         "name": "Beer Rater",
-        "img1": "/BeerRaterBW-min.png",
-        "img2": "/BeerRater-min.png",
+        "img1": "/BeerRaterBW-min.jpg",
+        "img2": "/BeerRater-min.jpg",
         "link": "https://evening-refuge-83030.herokuapp.com/",
         "link2": {
             "name": "Visit the repo",
