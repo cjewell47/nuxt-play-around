@@ -108,13 +108,12 @@ export default {
 </script>
 
 <style lang='scss' scoped>
-$gray: darkslategrey;
 h1 {
-  color: $gray;
+  color: blue;
   font-size: 2rem;
 }
 .under-h1 a {
-  color: darkslategrey;
+  color: blue;
   position: relative;
   background-clip: text;
   -webkit-background-clip: text;
@@ -123,7 +122,7 @@ h1 {
     to right,
     #fff,
     #fff 50%,
-    darkslategrey 50%
+    blue 50%
   );
   background-size: 200% 100%;
   background-position: 100%;

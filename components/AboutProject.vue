@@ -37,7 +37,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-$gray: darkslategrey;
 
 #about-project {
   box-sizing: border-box;
@@ -62,7 +61,7 @@ $gray: darkslategrey;
   h1 {
     padding-top: 20px;
     margin-top: 0;
-    color: $gray;
+    color: blue;
   }
   a,
   .back-link {
@@ -74,7 +73,7 @@ $gray: darkslategrey;
     padding: 8px;
     cursor: pointer;
     span {
-      color: $gray;
+      color: blue;
       z-index: 1;
     }
     &::before {
@@ -86,7 +85,7 @@ $gray: darkslategrey;
       height: 100%;
       background-image: linear-gradient(
         90deg,
-        lighten($gray, 5%) 33.33%,
+        lighten(blue, 5%) 33.33%,
         transparent 66.66%
       );
       -webkit-transform: translateX(-66.66%);

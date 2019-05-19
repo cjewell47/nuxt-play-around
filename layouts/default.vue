@@ -29,9 +29,9 @@ body {
   margin: 0;
   font-family: 'Titillium Web', Arial, sans-serif;
   font-weight: 300;
-  background: #f7797d;
-  background: -webkit-linear-gradient(to right, #f7797d, #fbd786, #c6ffdd);
-  background: linear-gradient(to right, #f7797d, #fbd786, #c6ffdd);
+  background: #BCFFFF;
+  background: -webkit-linear-gradient(to right, #BCFFFF ,#FFADE0);
+  background: linear-gradient(to right, #BCFFFF, #FFADE0);
   background-size: 300% 300%;
   -webkit-animation: Gradient 10s ease infinite;
   -moz-animation: Gradient 10s ease infinite;

@@ -1,6 +1,6 @@
 <template>
   <div class="Header">
-    <div class="items-wrap">
+    <div class="items-wrap" :class="{ 'scroll-background': scrolled }">
       <div class="items-container">
         <router-link to="/" exact>
           <h1 data-section="Charles Jewell">
@@ -74,8 +74,15 @@ export default {
   },
   data() {
     return {
-      menu: false
+      menu: false,
+      scrolled: false
     }
+  },
+  mounted() {
+    document.addEventListener('scroll', this.handleScroll)
+  },
+  destroyed() {
+    document.removeEventListener('scroll', this.handleScroll)
   },
   methods: {
     openMenu: function () {
@@ -83,6 +90,13 @@ export default {
     },
     closeMenu: function () {
       this.menu = false
+    },
+    handleScroll: function () {
+      if (window.pageYOffset > 0) {
+        this.scrolled = true
+      } else {
+        this.scrolled = false
+      }
     }
   }
 }
@@ -100,7 +114,9 @@ a {
   text-decoration: none;
 }
 .items-wrap {
-  background: #fff;
+  &.scroll-background {
+    background: rgba(255,255,255,0.9);
+  }
   .items-container {
     display: flex;
     max-width: 900px;

@@ -47,6 +47,7 @@ export default {
         opacity: 1;
         top: 70px;
         left: 20px;
+        border-radius: 0.3em;
       }
     }
   }
@@ -71,7 +72,7 @@ export default {
     p {
       margin: 12px auto;
       font-weight: 400;
-      font-size: 16px;
+      font-size: 1em;
     }
     a,
     span {
