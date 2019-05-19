@@ -114,8 +114,10 @@ a {
   text-decoration: none;
 }
 .items-wrap {
+  background-color: rgba(255,255,255,0);
+  transition: background-color linear 0.25s;
   &.scroll-background {
-    background: rgba(255,255,255,0.9);
+    background-color: rgba(255,255,255,0.9);
   }
   .items-container {
     display: flex;

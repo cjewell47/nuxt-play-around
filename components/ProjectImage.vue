@@ -1,10 +1,10 @@
 <template>
-  <div :class="'project-' + project.code">
+  <div :class="'project-' + project.code" @click="$emit('read-more', project.code)">
     <img :src="project.img1">
     <img :src="project.img2">
     <div>
       <p>
-        <span @click="$emit('read-more', project.code)">Read more</span>
+        <span>Read more</span>
       </p>
     </div>
   </div>
@@ -69,6 +69,10 @@ export default {
     transition: all 0.5s ease-in-out;
     -webkit-transition: all 0.5s ease-in-out;
     -moz-transition: all 0.5s ease-in-out;
+    cursor: pointer;
+    // &:hover {
+    //   background-color: #BCFFFF;
+    // }
     p {
       margin: 12px auto;
       font-weight: 400;
@@ -77,7 +81,6 @@ export default {
     a,
     span {
       text-decoration: none;
-      cursor: pointer;
       &:hover {
         text-decoration: underline;
       }

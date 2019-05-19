@@ -43,7 +43,7 @@ body {
     width: inherit;
     max-width: 900px;
     margin: auto;
-    padding: 120px 15px 80px;
+    padding: 140px 15px 80px;
   }
   @media screen and (min-width: 768px) {
     .router-anim-enter-active {
