@@ -70,9 +70,6 @@ export default {
     -webkit-transition: all 0.5s ease-in-out;
     -moz-transition: all 0.5s ease-in-out;
     cursor: pointer;
-    // &:hover {
-    //   background-color: #BCFFFF;
-    // }
     p {
       margin: 12px auto;
       font-weight: 400;
@@ -93,6 +90,16 @@ export default {
       &:hover ~ div {
         opacity: 0;
         top: 190px;
+      }
+    }
+  }
+  @media screen and (max-width: 767px) {
+    height: 250px;
+    width: 250px;
+    img {
+      height: 250px;
+      & ~ div {
+        display: none;
       }
     }
   }

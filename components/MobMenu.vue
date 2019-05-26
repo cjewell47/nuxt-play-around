@@ -64,7 +64,7 @@ export default {
     a {
       color: #000;
       text-decoration: none;
-      font-size: 28px;
+      font-size: 1.75rem;
     }
   }
 }

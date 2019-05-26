@@ -163,6 +163,18 @@ h1 {
   }
 }
 
+@media screen and (max-width: 767px) {
+  .projects-container {
+    .projects-image-container {
+      width: 250px;
+      position: relative;
+      top: 0;
+      left: 0;
+      transform: rotate(0deg);
+    }
+  }
+}
+
 .fade-enter-active,
 .fade-leave-active {
   transition: opacity 0.4s;

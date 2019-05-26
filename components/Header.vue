@@ -127,7 +127,7 @@ a {
     align-items: center;
     h1 {
       color: #000;
-      font-size: 48px;
+      font-size: 3rem;
       margin: 0;
       z-index: 0;
       position: relative;
@@ -197,7 +197,7 @@ a {
       position: relative;
       height: 100px;
       width: 100px;
-      font-size: 14px;
+      font-size: 0.875rem;
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -298,7 +298,7 @@ a {
       justify-content: space-between;
       align-items: center;
       h2 {
-        font-size: 28px;
+        font-size: 1.75rem;
         color: #000;
       }
     }

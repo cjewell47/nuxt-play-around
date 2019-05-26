@@ -53,6 +53,11 @@ export default {
     float: right;
     margin: 10px;
   }
+  @media screen and (max-width: 767px) {
+    img {
+      margin: 0;
+    }
+  }
 }
 
 .about-text {
