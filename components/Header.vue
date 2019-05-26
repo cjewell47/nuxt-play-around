@@ -283,6 +283,10 @@ a {
     }
   }
   @media screen and (max-width: 767px) {
+    background-color: #fff;
+    &.scroll-background {
+      background-color: #fff;
+    }
     height: 120px;
     .items-container {
       display: none;
