@@ -2,7 +2,7 @@
   <div class="Header">
     <div class="items-wrap" :class="{ 'scroll-background': scrolled }">
       <div class="items-container">
-        <router-link to="/" exact>
+        <router-link :class="{'hidden': this.$route.name === 'index'}" to="/" exact>
           <h1 data-section="Charles Jewell">
             Charles Jewell
           </h1>
@@ -169,6 +169,14 @@ a {
     }
     li {
       list-style: none;
+    }
+    a {
+      transition: opacity 0.3s linear;
+      -moz-transition: opacity 0.3s linear;
+      -webkit-transition: opacity 0.3s linear;
+      &.hidden {
+        opacity: 0;
+      }
     }
     .router-link-active {
       .header-item {

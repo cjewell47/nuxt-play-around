@@ -4,7 +4,6 @@ import { interopDefault } from './utils'
 
 const _b31ffc86 = () => interopDefault(import('../pages/About.vue' /* webpackChunkName: "pages/About" */))
 const _66194a60 = () => interopDefault(import('../pages/Contact.vue' /* webpackChunkName: "pages/Contact" */))
-const _f0647a42 = () => interopDefault(import('../pages/Home.vue' /* webpackChunkName: "pages/Home" */))
 const _7e0e260c = () => interopDefault(import('../pages/Projects.vue' /* webpackChunkName: "pages/Projects" */))
 const _35c7cac2 = () => interopDefault(import('../pages/Skills.vue' /* webpackChunkName: "pages/Skills" */))
 const _4eb5bca2 = () => interopDefault(import('../pages/index.vue' /* webpackChunkName: "pages/index" */))
@@ -91,10 +90,6 @@ export function createRouter() {
       path: "/Contact",
       component: _66194a60,
       name: "Contact"
-    }, {
-      path: "/Home",
-      component: _f0647a42,
-      name: "Home"
     }, {
       path: "/Projects",
       component: _7e0e260c,
