@@ -2,15 +2,27 @@
   <div class="page">
     <h1>Skills</h1>
     <div class="skills-container">
-      <article />
+      <article>
+        <div :class="{ 'skills-active': skills === 1 || skills === 2 || skills === 3 }">
+          <div v-if="skills === 1" class="skills-text">
+            <h1>one</h1>
+          </div>
+          <div v-if="skills === 2" class="skills-text">
+            <h1>two</h1>
+          </div>
+          <div v-if="skills === 3" class="skills-text">
+            <h1>three</h1>
+          </div>
+        </div>
+      </article>
       <aside>
-        <button>
+        <button @click="skills === 1 ? skills = 0 : skills = 1">
           What I use everyday
         </button>
-        <button>
+        <button @click="skills === 2 ? skills = 0 : skills = 2">
           What I have experience with
         </button>
-        <button>
+        <button @click="skills === 3 ? skills = 0 : skills = 3">
           What I'm learning
         </button>
       </aside>
@@ -20,7 +32,12 @@
 
 <script>
 export default {
-  name: 'Skills'
+  name: 'Skills',
+  data() {
+    return {
+      skills: 0
+    }
+  }
 }
 </script>
 
@@ -42,8 +59,34 @@ h1 {
     article {
       flex-grow: 2;
       height: 100%;
-      background: yellowgreen;
       margin: 10px;
+      & > div {
+        display: inline-flex;
+        width: 100%; //
+        position: relative; //
+        overflow: hidden; //
+        height: 100%;
+        &::before {
+          content: "";
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 300%;
+          height: 100%;
+          background-image: linear-gradient(90deg, #ffffff 33.33%, transparent 66.66%);
+          transform: translateX(-66.66%);
+          z-index: 0;
+          transition: all 0.75s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        &.skills-active {
+          &::before {
+            transform: translateX(0);
+          }
+        }
+        .skills-text {
+          z-index: 2;
+        }
+      }
     }
     aside {
       max-width: 300px;
@@ -63,7 +106,8 @@ h1 {
         background: linear-gradient(135deg, rgba(0,0,255,1) 0%, rgba(255,255,255,1) 50%);
         background-position: 100% 100%;
         background-size: 400%;
-        transition: background-position .5s ease;
+        border-radius: 100%;
+        transition: all 0.5s ease;
         &::before, &::after {
           position: absolute;
           font-size: 2.5em;
@@ -79,6 +123,7 @@ h1 {
           right: 35%;
         }
         &:hover {
+          transform: scale(1.05);
           background-position: 40% 40%;
           &::before, &::after {
             font-size: 3em;
@@ -90,6 +135,9 @@ h1 {
           &::after {
             right: 10%;
           }
+        }
+        &:focus {
+          outline: none;
         }
       }
     }
