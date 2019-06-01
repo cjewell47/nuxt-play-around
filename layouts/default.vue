@@ -58,6 +58,12 @@ body {
       -webkit-animation: going 0.6s;
     }
   }
+  button {
+    cursor: pointer;
+      border: none;
+      padding: 0;
+      font-family: 'Titillium Web', Arial, sans-serif;
+  }
 }
 
 @keyframes going {

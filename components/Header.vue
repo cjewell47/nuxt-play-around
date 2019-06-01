@@ -1,6 +1,6 @@
 <template>
   <div class="Header">
-    <div class="items-wrap" :class="{ 'scroll-background': scrolled }">
+    <div class="items-wrap">
       <nav class="items-container">
         <router-link :class="{'hidden': this.$route.name === 'index'}" to="/" exact>
           <h1 data-section="Charles Jewell">
@@ -74,15 +74,8 @@ export default {
   },
   data() {
     return {
-      menu: false,
-      scrolled: false
+      menu: false
     }
-  },
-  mounted() {
-    document.addEventListener('scroll', this.handleScroll)
-  },
-  destroyed() {
-    document.removeEventListener('scroll', this.handleScroll)
   },
   methods: {
     openMenu: function () {
@@ -90,13 +83,6 @@ export default {
     },
     closeMenu: function () {
       this.menu = false
-    },
-    handleScroll: function () {
-      if (window.pageYOffset > 0) {
-        this.scrolled = true
-      } else {
-        this.scrolled = false
-      }
     }
   }
 }
@@ -105,10 +91,13 @@ export default {
 <style lang="scss" scoped>
 .Header {
   overflow: hidden;
-  position: fixed;
+  position: absolute;
   width: 100%;
   height: 120px;
   z-index: 5;
+  @media screen and (max-width: 767px) {
+    position: fixed;
+  }
 }
 a {
   text-decoration: none;
@@ -117,7 +106,7 @@ a {
   background-color: rgba(255,255,255,0);
   transition: background-color linear 0.25s;
   &.scroll-background {
-    background-color: rgba(255,255,255,0.9);
+    background-color: rgba(255,255,255,1);
   }
   .items-container {
     display: flex;

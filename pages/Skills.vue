@@ -4,9 +4,15 @@
     <div class="skills-container">
       <article />
       <aside>
-        <div />
-        <div />
-        <div />
+        <button>
+          What I use everyday
+        </button>
+        <button>
+          What I have experience with
+        </button>
+        <button>
+          What I'm learning
+        </button>
       </aside>
     </div>
   </div>
@@ -47,16 +53,43 @@ h1 {
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      div {
+      button {
+        position: relative;
+        font-size: 1.5rem;
+        padding: 22px 8px 6px 8px;
         max-width: 275px;
         height: 275px;
         background: white;
         background: linear-gradient(135deg, rgba(0,0,255,1) 0%, rgba(255,255,255,1) 50%);
         background-position: 100% 100%;
         background-size: 400%;
-        transition: background-position .45s ease-in-out;
+        transition: background-position .5s ease;
+        &::before, &::after {
+          position: absolute;
+          font-size: 2.5em;
+          top: 30px;
+          transition: all 0.5s ease-in-out;
+        }
+        &::before {
+          content: '<';
+          left: 35%;
+        }
+        &::after {
+          content: '>';
+          right: 35%;
+        }
         &:hover {
           background-position: 40% 40%;
+          &::before, &::after {
+            font-size: 3em;
+            top: 20px;
+          }
+          &::before {
+            left: 10%;
+          }
+          &::after {
+            right: 10%;
+          }
         }
       }
     }
