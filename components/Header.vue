@@ -1,7 +1,7 @@
 <template>
   <div class="Header">
     <div class="items-wrap" :class="{ 'scroll-background': scrolled }">
-      <div class="items-container">
+      <nav class="items-container">
         <router-link :class="{'hidden': this.$route.name === 'index'}" to="/" exact>
           <h1 data-section="Charles Jewell">
             Charles Jewell
@@ -35,7 +35,7 @@
             </div>
           </router-link>
         </li>
-      </div>
+      </nav>
       <div class="burger-menu">
         <router-link to="/" exact>
           <h2 @click="closeMenu">

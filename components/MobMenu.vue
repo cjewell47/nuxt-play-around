@@ -1,6 +1,6 @@
 <template>
   <transition name="fade" mode="out-in">
-    <div class="full-menu">
+    <nav class="full-menu">
       <div>
         <router-link to="/about" exact>
           <p @click="$emit('close-menu')">
@@ -29,7 +29,7 @@
           </p>
         </router-link>
       </div>
-    </div>
+    </nav>
   </transition>
 </template>
 
