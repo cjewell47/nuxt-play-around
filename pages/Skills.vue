@@ -11,9 +11,15 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-$gray: darkslategrey;
 h1 {
-  color: $gray;
+  color: blue;
   font-size: 2rem;
+}
+.page {
+  display: flex;
+  justify-content: center;
+  max-width: 1100px;
+  flex-direction: column;
+  align-items: center;
 }
 </style>

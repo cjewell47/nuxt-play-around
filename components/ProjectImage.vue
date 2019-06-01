@@ -47,7 +47,7 @@ export default {
         opacity: 1;
         top: 70px;
         left: 20px;
-        border-radius: 0.3em;
+        border-radius: 0.2em;
       }
     }
   }
