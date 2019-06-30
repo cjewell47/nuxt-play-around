@@ -3,9 +3,36 @@
     <h1>Skills</h1>
     <div class="skills-container">
       <menu>
-        <button aria-label="What I use everyday" @click="skills === 1 ? skills = 0 : skills = 1" />
-        <button aria-label="What I have experience with" @click="skills === 2 ? skills = 0 : skills = 2" />
-        <button aria-label="What I'm learning" @click="skills === 3 ? skills = 0 : skills = 3" />
+        <menuitem
+          :class="{'menuitem-active': skills === 1, 'menuitem-inactive': skills === 2 || skills === 3}"
+        >
+          <p>What I use everyday</p>
+          <button
+            class="menuitem-button"
+            aria-label="What I use everyday"
+            @click="skills === 1 ? skills = 0 : skills = 1"
+          />
+        </menuitem>
+        <menuitem
+          :class="{'menuitem-active': skills === 2, 'menuitem-inactive': skills === 1 || skills === 3}"
+        >
+          <p>What I have experience with</p>
+          <button
+            class="menuitem-button"
+            aria-label="What I have experience with"
+            @click="skills === 2 ? skills = 0 : skills = 2"
+          />
+        </menuitem>
+        <menuitem
+          :class="{'menuitem-active': skills === 3, 'menuitem-inactive': skills === 1 || skills === 2}"
+        >
+          <p>What I'm learning</p>
+          <button
+            class="menuitem-button"
+            aria-label="What I'm learning"
+            @click="skills === 3 ? skills = 0 : skills = 3"
+          />
+        </menuitem>
       </menu>
       <article>
         <div :class="{ 'skills-active': skills === 1 || skills === 2 || skills === 3 }">
@@ -92,7 +119,15 @@ menu {
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
-  button {
+}
+menuitem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: opacity 0.35s ease-in-out;
+}
+.menuitem {
+  &-button {
     position: relative;
     font-size: 1.5rem;
     height: 100px;
@@ -112,6 +147,7 @@ menu {
       position: absolute;
       font-size: 2em;
       top: 12px;
+      color: #000;
       transition: all 0.5s ease-in-out;
     }
     &::before {
@@ -139,6 +175,29 @@ menu {
     }
     &:focus {
       outline: none;
+    }
+  }
+  &-active {
+    .menuitem-button {
+      transform: scale(1.05);
+      background-position: 40% 40%;
+      &::before,
+      &::after {
+        font-size: 2.2em;
+        top: 8px;
+      }
+      &::before {
+        left: 10%;
+      }
+      &::after {
+        right: 10%;
+      }
+    }
+  }
+  &-inactive {
+    opacity: 0.5;
+    &:hover {
+      opacity: 1;
     }
   }
 }
