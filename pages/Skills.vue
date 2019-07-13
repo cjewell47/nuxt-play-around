@@ -37,13 +37,19 @@
       <article>
         <div :class="{ 'skills-active': skills === 1 || skills === 2 || skills === 3 }">
           <div v-if="skills === 1" class="skills-text">
-            <h1>one</h1>
+            <p v-for="(skill, i) in skillsObj.one" :key="i">
+              {{ skill }}
+            </p>
           </div>
           <div v-if="skills === 2" class="skills-text">
-            <h1>two</h1>
+            <p v-for="(skill, i) in skillsObj.two" :key="i">
+              {{ skill }}
+            </p>
           </div>
           <div v-if="skills === 3" class="skills-text">
-            <h1>three</h1>
+            <p v-for="(skill, i) in skillsObj.three" :key="i">
+              {{ skill }}
+            </p>
           </div>
         </div>
       </article>
@@ -52,11 +58,14 @@
 </template>
 
 <script>
+import skillsObj from '../skills.json'
+
 export default {
   name: 'Skills',
   data() {
     return {
-      skills: 0
+      skills: 0,
+      skillsObj: skillsObj
     }
   }
 }
