@@ -26,6 +26,10 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@mixin mobile {
+  @media screen and (max-width: 767px) { @content; }
+}
+
 [class^="project-"] {
   position: relative;
   height: 170px;
@@ -93,7 +97,7 @@ export default {
       }
     }
   }
-  @media screen and (max-width: 767px) {
+  @include mobile {
     height: 250px;
     width: 250px;
     img {

@@ -72,8 +72,13 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@mixin mobile {
+  @media screen and (max-width: 767px) {
+    @content;
+  }
+}
 h1 {
-  color: blue;
+  color: #0000ff;
   font-size: 2rem;
 }
 .page {
@@ -87,39 +92,34 @@ h1 {
   width: 600px;
   margin: 40px auto;
   display: block;
+  @include mobile {
+    width: 100%;
+    margin: 20px auto;
+  }
 }
 article {
-  margin: 10px;
+  margin: 50px 10px 10px;
   & > div {
     display: inline-flex;
     width: 100%;
     position: relative;
     overflow: hidden;
-    height: 100%;
-    &::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 300%;
-      height: 100%;
-      background-image: linear-gradient(
-        90deg,
-        #ffffff 33.33%,
-        transparent 66.66%
-      );
-      transform: translateX(-66.66%);
-      z-index: 0;
-      transition: all 0.75s cubic-bezier(0.4, 0, 0.2, 1);
-    }
-    &.skills-active {
-      &::before {
-        transform: translateX(0);
-      }
-    }
+    min-height: 300px;
     .skills-text {
       z-index: 2;
     }
+  }
+}
+.skills-text {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-auto-rows: max-content;
+  width: 100%;
+  & > p {
+    text-align: center;
+  }
+  @include mobile {
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 menu {
@@ -128,12 +128,25 @@ menu {
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
+  @include mobile {
+    margin: 10px 0;
+    width: 100%;
+  }
 }
 menuitem {
   display: flex;
   flex-direction: column;
   align-items: center;
   transition: opacity 0.35s ease-in-out;
+   @include mobile {
+     height: 190px;
+     justify-content: space-between;
+    p {
+      opacity: 0;
+      text-align: center;
+      width: 110%;
+    }
+  }
 }
 .menuitem {
   &-button {
@@ -155,7 +168,7 @@ menuitem {
     &::after {
       position: absolute;
       font-size: 2em;
-      top: 12px;
+      top: 9px;
       color: #000;
       transition: all 0.5s ease-in-out;
     }
@@ -173,7 +186,7 @@ menuitem {
       &::before,
       &::after {
         font-size: 2.2em;
-        top: 8px;
+        top: 5px;
       }
       &::before {
         left: 10%;
@@ -184,6 +197,12 @@ menuitem {
     }
     &:focus {
       outline: none;
+    }
+    @include mobile {
+      border-radius: 0;
+      &:hover {
+        transform: scale(1);
+      }
     }
   }
   &-active {
@@ -202,11 +221,24 @@ menuitem {
         right: 10%;
       }
     }
+    @include mobile {
+      .menuitem-button {
+        transform: scale(1);
+      }
+      p {
+        opacity: 1;
+      }
+    }
   }
   &-inactive {
     opacity: 0.5;
     &:hover {
       opacity: 1;
+    }
+    @include mobile {
+      p {
+        opacity: 0;
+      }
     }
   }
 }

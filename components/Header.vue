@@ -89,13 +89,17 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@mixin mobile {
+  @media screen and (max-width: 767px) { @content; }
+}
+
 .Header {
   overflow: hidden;
   position: absolute;
   width: 100%;
   height: 120px;
   z-index: 5;
-  @media screen and (max-width: 767px) {
+  @include mobile {
     position: fixed;
   }
 }
@@ -279,7 +283,7 @@ a {
       stroke-dashoffset: -68px;
     }
   }
-  @media screen and (max-width: 767px) {
+  @include mobile {
     background-color: #fff;
     &.scroll-background {
       background-color: #fff;

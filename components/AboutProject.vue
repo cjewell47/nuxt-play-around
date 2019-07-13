@@ -37,6 +37,9 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@mixin mobile {
+  @media screen and (max-width: 767px) { @content; }
+}
 
 #about-project {
   box-sizing: border-box;
@@ -53,7 +56,7 @@ export default {
     float: right;
     margin: 10px;
   }
-  @media screen and (max-width: 767px) {
+  @include mobile {
     img {
       margin: 0;
     }
@@ -66,7 +69,7 @@ export default {
   h1 {
     padding-top: 20px;
     margin-top: 0;
-    color: blue;
+    color: #0000ff;
   }
   a,
   .back-link {
@@ -78,7 +81,7 @@ export default {
     padding: 8px;
     cursor: pointer;
     span {
-      color: blue;
+      color: #0000ff;
       z-index: 1;
     }
     &::before {
@@ -90,7 +93,7 @@ export default {
       height: 100%;
       background-image: linear-gradient(
         90deg,
-        lighten(blue, 5%) 33.33%,
+        lighten(#0000ff, 5%) 33.33%,
         transparent 66.66%
       );
       -webkit-transform: translateX(-66.66%);

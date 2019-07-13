@@ -108,12 +108,16 @@ export default {
 </script>
 
 <style lang='scss' scoped>
+@mixin mobile {
+  @media screen and (max-width: 767px) { @content; }
+}
+
 h1 {
-  color: blue;
+  color: #0000ff;
   font-size: 2rem;
 }
 .under-h1 a {
-  color: blue;
+  color: #0000ff;
   position: relative;
   background-clip: text;
   -webkit-background-clip: text;
@@ -122,7 +126,7 @@ h1 {
     to right,
     #fff,
     #fff 50%,
-    blue 50%
+    #0000ff 50%
   );
   background-size: 200% 100%;
   background-position: 100%;
@@ -146,7 +150,7 @@ h1 {
   flex-wrap: wrap;
   position: relative;
   overflow: hidden;
-  @media screen and (max-width: 767px) {
+  @include mobile {
     width: 250px;
     height: 1250px;
   }
@@ -163,7 +167,7 @@ h1 {
   }
 }
 
-@media screen and (max-width: 767px) {
+@include mobile {
   .projects-container {
     .projects-image-container {
       width: 250px;
