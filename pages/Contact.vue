@@ -6,6 +6,15 @@
         <h2 id="email" data-el="cj@charlesjewell.com">cj@charlesjewell.com</h2>
       </a>
     </div>
+    <div class="social-container">
+      <a
+        class="social-link"
+        target="_blank"
+        href="https://www.linkedin.com/in/jewellcharles/"
+      >LinkedIn</a>
+      <br>
+      <a class="social-link" target="_blank" href="https://github.com/cjewell47">GitHub</a>
+    </div>
   </div>
 </template>
 
@@ -16,27 +25,28 @@ export default {
 </script>
 
 <style lang='scss' scoped>
-$gray: darkslategrey;
+@mixin mobile {
+  @media screen and (max-width: 767px) {
+    @content;
+  }
+}
+$blue: #0000ff;
 h1 {
-  color: $gray;
+  color: $blue;
   font-size: 2rem;
 }
 .page {
-  display: flex;
-  justify-content: center;
-  max-width: 1100px;
-  flex-direction: column;
-  align-items: center;
+  max-width: 700px;
+  margin: auto;
+  text-align: center;
 }
 
 .email-container {
   position: relative;
-  margin-bottom: 20px;
+  margin: 0 auto 20px;
   width: 400px;
   height: 70px;
-  display: flex;
   border: 1px solid #000;
-  justify-content: center;
   @media screen and (max-width: 450px) {
     width: 280px;
   }
@@ -90,6 +100,29 @@ h1 {
         }
       }
     }
+  }
+}
+.social-container {
+  display: flex;
+  margin: 0 auto 20px;
+  width: 400px;
+  justify-content: space-around;
+  @media screen and (max-width: 450px) {
+    width: 280px;
+  }
+}
+.social-link {
+  color: $blue;
+  position: relative;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-image: linear-gradient(to right, #fff, #fff 50%, $blue 50%);
+  background-size: 200% 100%;
+  background-position: 100%;
+  transition: all 0.3s cubic-bezier(0, 0, 0.23, 1);
+  &:hover {
+    background-position: 0%;
   }
 }
 </style>
