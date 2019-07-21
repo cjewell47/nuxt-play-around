@@ -6,10 +6,10 @@
         <menuitem
           :class="{'menuitem-active': skills === 1, 'menuitem-inactive': skills === 2 || skills === 3}"
         >
-          <p>What I use everyday</p>
+          <p>What I use often</p>
           <button
             class="menuitem-button"
-            aria-label="What I use everyday"
+            aria-label="What I use often"
             @click="skills === 1 ? skills = 0 : skills = 1"
           />
         </menuitem>
