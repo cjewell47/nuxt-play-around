@@ -101,6 +101,7 @@ export default {
   z-index: 5;
   @include mobile {
     position: fixed;
+    overflow: initial;
   }
 }
 a {

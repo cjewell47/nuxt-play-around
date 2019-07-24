@@ -157,8 +157,8 @@ menuitem {
     background: white;
     background: linear-gradient(
       135deg,
-      rgba(255, 0, 0, 1) 50%,
-      rgba(255, 255, 255, 1) 50%
+      rgba(255, 0, 0, 1) 45%,
+      rgba(255, 255, 255, 1) 45%
     );
     background-position: 100% 100%;
     background-size: 400%;

@@ -1,6 +1,12 @@
 
+const routerBase = process.env.DEPLOY_ENV === 'GH_PAGES' ? {
+  router: {
+    base: '/nuxt-play-around/'
+  }
+} : {}
+
 export default {
-  mode: 'universal',
+  mode: 'spa',
 
   /*
   ** Headers of the page
@@ -25,6 +31,8 @@ export default {
       }
     ]
   },
+
+  ...routerBase,
 
   /*
   ** Customize the progress-bar color

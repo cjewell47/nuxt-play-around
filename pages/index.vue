@@ -1,6 +1,7 @@
 <template>
   <div class="page">
-    <h1>Welcome...</h1>
+    <h1>Charles Jewell</h1>
+    <h2>Web Developer - London</h2>
   </div>
 </template>
 
@@ -15,6 +16,9 @@ export default {
 h1 {
   color: #0000ff;
   font-size: 2rem;
+  text-align: center;
+}
+h2 {
   text-align: center;
 }
 </style>
